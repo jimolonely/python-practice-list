@@ -1,5 +1,6 @@
 # python-practice-list
 来自这里[ProgrammingProjectList](https://github.com/jobbole/ProgrammingProjectList)，然后经过改版和实现，因为其中有些不适合每个人。
+为什么不用fork呢？这个原因很特殊。
 
 下面列出 120 多个项目构思，根据主题分成了 10 个分类。
 
