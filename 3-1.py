@@ -23,8 +23,8 @@ class Store(object):
 
     def show(self):
         print('Total is: '+str(self.total))
-        if type(apple) is Product:
-            for p in self.products:
+        for p in self.products:
+            if type(p) is Product:
                 print(p)
     
 '''
