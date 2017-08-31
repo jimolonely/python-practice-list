@@ -2,6 +2,7 @@
 #-*-coding:utf-8-*-
 
 import sys
+import re
 from PyQt5.QtWidgets import (QApplication,QWidget,QVBoxLayout,QGridLayout,QFormLayout,QLabel,QLineEdit,QTextEdit,QPushButton)
 
 class RegularExp(QWidget):
@@ -46,11 +47,20 @@ class RegularExp(QWidget):
         self.down.addWidget(self.txt_in,2,0)
         self.down.addWidget(self.txt_out,2,1)
 
-    
+    '''
+    正则验证
+    '''
     def verify(self):
-        reg = self.regEdit.toPlainText()
+        self.txt_out.setText("")
+        reg = self.regEdit.text()
         txtIn = self.txt_in.toPlainText()
-        self.txt_out.setText(txtIn)
+        if reg=='' or txtIn=='':
+            return
+        m = re.findall(reg,txtIn)
+        if len(m)==0:
+            self.txt_out.setText("无结果")
+        else:
+            self.txt_out.setText(str(m))
 
 if __name__=='__main__':
     app = QApplication(sys.argv)
